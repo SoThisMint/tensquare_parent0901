@@ -11,12 +11,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import util.IdWorker;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 /**
  * @program: tensquare_parent0901
@@ -57,7 +56,7 @@ public class LabelService {
     }
 
     public List<Label> findSearch(Label label) {
-        return labelDao.findAll((Specification<Label>) getLabelSpecification(label));
+        return labelDao.findAll(getLabelSpecification(label));
     }
 
     private Specification<Label> getLabelSpecification(Label label) {
@@ -90,7 +89,7 @@ public class LabelService {
 
         //封装一个分页对象
         Pageable pageable = PageRequest.of(page - 1, size);
-        return labelDao.findAll((Specification<Label>) getLabelSpecification(label), pageable);
+        return labelDao.findAll(getLabelSpecification(label), pageable);
 
     }
 }
