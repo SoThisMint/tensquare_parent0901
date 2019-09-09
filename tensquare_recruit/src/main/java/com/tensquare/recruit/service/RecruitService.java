@@ -3,6 +3,7 @@ package com.tensquare.recruit.service;
 import com.tensquare.recruit.dao.RecruitDao;
 import com.tensquare.recruit.pojo.Recruit;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.parsing.Problem;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
